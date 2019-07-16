@@ -20,7 +20,7 @@
         	<div class=""><img src="{{asset('images/buy_product_img.png')}}" /></div>
         </div>
         <div class="buy_xinxi">
-        	<div class="buy_name">BetterZip 4.1</div>
+        	<div class="buy_name">{{$pay_config['goods_name'] }}</div>
             <div class="buy_jieshao">BetterZip是一款适用于Mac操作系统的软件。</div>
             <div class="buy_price"><span class="price_span">¥ {{$pay_config['price']}}</span><span class="price_old">原价： 169</span> 五分钟内发送邮件到您填写的邮箱</div>
             <table cellpadding="0" cellspacing="0" border="0" class="buy_table">
@@ -28,7 +28,7 @@
                 	<td class="buy_td1">版本：</td>
                     <td>
                         <dl class="buy_dl">
-                            <dd class="selecta buy_active">{{$pay_config['goods_name'] }}</dd>
+                            <dd class="selecta buy_active">Mac标准版</dd>
                         </dl>
                     </td>
                 </tr>
