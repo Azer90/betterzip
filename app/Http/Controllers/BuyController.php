@@ -9,26 +9,12 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 use Yansongda\Pay\Pay;
+use Illuminate\Support\Facades\Validator;
 
 class BuyController extends Controller
 {
     use BaseController;
 
-    /**
-     * 购买
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View|\think\response\View
-     */
-    public function index(){
-
-        $nav=$this->nav;
-        $name=$this->name;
-        $seo=$this->seo;
-        $config=$this->system;
-        $config['title_tag']='购买';
-        $goods=Goods::all()->toArray();
-        $endgoods=end($goods);
-        return view('buy')->with(compact('nav','name','seo','config','goods','endgoods'));
-    }
 
     /**
      * 加载
@@ -49,6 +35,33 @@ class BuyController extends Controller
             $msg['message']='数据错误';
             return response()->json($msg);
         }
+        $validator=Validator::make($data, [
+                'contact' => 'bail|required|max:5',
+                'mobile' => 'bail|required|max:11',
+                'email' => 'bail|required|email',
+                ]
+        );
+
+        $errors = $validator->errors();
+        foreach ($errors->all() as $message) {
+            if ($errors->has('contact')) {
+                $msg['code']=1002;
+                $msg['message']=$message;
+                return response()->json($msg);
+            }
+            if ($errors->has('mobile')) {
+                $msg['code']=1002;
+                $msg['message']=$message;
+                return response()->json($msg);
+            }
+            if ($errors->has('email')) {
+                $msg['code']=1002;
+                $msg['message']=$message;
+                return response()->json($msg);
+            }
+
+        }
+
      /*   $goods=Goods::find($data['package']);
         if(empty($goods)){
             $msg['code']=1002;
@@ -56,7 +69,7 @@ class BuyController extends Controller
             return response()->json($msg);
         }*/
         $ip=$request->getClientIp();
-        $order_no=$this->createOrder($this->pay_config['goods_name'],$this->pay_config['price'],$ip,$data['paymethod']);
+        $order_no=$this->createOrder($data,$this->pay_config['goods_name'],$this->pay_config['price'],$ip,$data['paymethod']);
 
         if($data['paymethod']=='alipay'){
 
@@ -99,7 +112,7 @@ class BuyController extends Controller
      * @param $payway
      * @return string
      */
-    private function createOrder($goods_name,$amount,$ip,$payway){
+    private function createOrder($data,$goods_name,$amount,$ip,$payway){
         $now_time = date('Y-m-d H:i:s',time());
         $order_no=date('YmdHis').uniqid();
 
@@ -107,9 +120,11 @@ class BuyController extends Controller
             'order_no' => $order_no,
             'goods_name' =>$goods_name,
             'amount' => $amount,
-            'email' => '',
+            'email' => $data['email'],
             'ip' => $ip,
             'payway' => $payway,
+            'contact' => $data['contact'],
+            'mobile' => $data['mobile'],
             'updated_at' => $now_time,
             'created_at' => $now_time,
             ]);
@@ -169,11 +184,11 @@ class BuyController extends Controller
             if($data->trade_status=='TRADE_SUCCESS'){
 
                 if($this->ali_config['app_id']==$data->app_id){
-                    $amount=PayOrder::where(['order_no'=>$data->out_trade_no])->value('amount');
+                    $order=PayOrder::where(['order_no'=>$data->out_trade_no])->first();
 
-                    if((float)$amount==(float)($data->total_amount)){
-
+                    if((float)$order['amount']==(float)($data->total_amount)){
                         PayOrder::where(['order_no'=>$data->out_trade_no])->update(['status'=>1,'trade_no'=>$data->trade_no,'openid'=>$data->buyer_id]);
+                        $this->sendEmail(env('MAIL_TO_ADDRESS', ''),$order);
                     }
                 }
             }
@@ -200,9 +215,10 @@ class BuyController extends Controller
 
                 if($this->wechat_config['app_id']==$data->appid){
 
-                    $amount=PayOrder::where(['order_no'=>$data->out_trade_no])->value('amount');
-                    if((float)$amount==(float)($data->total_fee/100)){
+                    $order=PayOrder::where(['order_no'=>$data->out_trade_no])->first();
+                    if((float)$order['amount']==(float)($data->total_fee/100)){
                         PayOrder::where(['order_no'=>$data->out_trade_no])->update(['status' => 1,'trade_no'=>$data->transaction_id,'openid'=>$data->openid]);
+                        $this->sendEmail(env('MAIL_TO_ADDRESS', ''),$order);
                     }
                 }
             }
@@ -216,7 +232,7 @@ class BuyController extends Controller
     /**
      * 发送数据
      */
-    public function sendData(Request $request){
+ /*   public function sendData(Request $request){
         $data=$request->all();
         $orderData =  PayOrder::select('status','payway')->where(['order_no'=>$data['order_no']])->first();
         $msg['message']='支付不成功';
@@ -237,11 +253,11 @@ class BuyController extends Controller
         }
 
         return response()->json($msg);
-    }
+    }*/
 
-    protected function sendEmail($to,$code){
+    protected function sendEmail($to,$data_d){
         $subject = '自动发送-晨光pdf转换器注册码';
-        $data=['code' => $code];
+        $data=['mobile' => $data_d['mobile'],'contact' => $data_d['contact'],'email' => $data_d['email']];
         Mail::send('email.send', $data, function ($message) use($to, $subject) {
                 $message->to($to)->subject($subject);
             }

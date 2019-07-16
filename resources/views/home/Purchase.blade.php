@@ -172,7 +172,6 @@
         <p class="wechatUrl" style="display:none;">{{ route('wechat_find') }}</p>
         <p class="aliUrl" style="display:none;">{{ route('ali_find') }}</p>
         <p class="order_no" style="display:none;">{{ request()->out_trade_no }}</p>
-        <p class="sendUrl" style="display:none;">{{ route('sendData') }}</p>
 
     </div>
     <!--购买结构end-->

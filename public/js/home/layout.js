@@ -79,7 +79,9 @@ $(function() {
                             text: data.message
                         });
                     };
-                };
+                }else {
+                    alert( data.message);
+                }
             }
         })
     }
@@ -112,6 +114,43 @@ $(function() {
         $(".wechat-pay-dialog-bg").css("display", "none");
         $(".wechat-pay-dialog").css("display", "none");
     });
+    chaxun = setInterval(function () {
+        check()
+    }, 3000);
+    function check() {
+        var paymethod = $('input:radio[name="paymethod"]:checked').val();
+        //console.log(paymethod);
+        if (paymethod == 'alipay') {
+            var url =$('.aliUrl').text();
+        }
+        if (paymethod == 'wechat') {
+            var url =$('.wechatUrl').text();
+        }
+        var order_no = $('.order_no').text();
+        var param = {'order_no': order_no, '_token':$('.token').text()};
+        if(order_no !=''){
+            $.post(url, param, function (data) {
+
+                if(paymethod == 'alipay'){
+                    // console.log(data['trade_status']);
+                    if (data['trade_status'] == 'TRADE_SUCCESS') {
+                        clearInterval(chaxun);
+                        alert('支付成功');
+                    }
+                }else if(paymethod == 'wechat'){
+                    //console.log(data['trade_state']);
+                    if (data['trade_state'] == 'SUCCESS') {
+                        $(".wechat-pay-dialog-bg").css("display", "none");
+                        $(".wechat-pay-dialog").css("display", "none");
+                        clearInterval(chaxun);
+                        alert('支付成功');
+                    }
+                }
+
+            });
+        }
+
+    }
 })
 
 //点击数量“+”“-”数字递增或减少
