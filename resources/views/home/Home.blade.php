@@ -1,4 +1,4 @@
-@extends('Home.Master')
+@extends('home.Master')
 @section('title', 'betterzip中文官网 - 最新mac解压缩软件')
 @section('keywords','betterzip,betterzip官网,mac解压软件,mac压缩软件,betterzip下载,betterzip免费下载,betterzip购买')
 @section('description','betterzip中文官网提供最新的betterzip 4.0免费下载试用及官方正版购买，可以满足您所有的mac使用过程中的解压缩需求，同时提供完善的售后服务保障及技术支持。')
