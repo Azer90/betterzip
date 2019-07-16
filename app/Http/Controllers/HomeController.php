@@ -21,7 +21,7 @@ class HomeController
         $name=$this->name;
         $seo=$this->seo;
         $config=$this->system;
-        return view('Home.Home')->with(compact('nav','name','seo','config'));
+        return view('home.Home')->with(compact('nav','name','seo','config'));
     }
 
     public function Feature()
@@ -30,7 +30,7 @@ class HomeController
         $name=$this->name;
         $seo=$this->seo;
         $config=$this->system;
-        return view('Home.Feature')->with(compact('nav','name','seo','config'));
+        return view('home.Feature')->with(compact('nav','name','seo','config'));
     }
 
     public function Download()
@@ -39,7 +39,7 @@ class HomeController
         $name=$this->name;
         $seo=$this->seo;
         $config=$this->system;
-        return view('Home.Download')->with(compact('nav','name','seo','config'));
+        return view('home.Download')->with(compact('nav','name','seo','config'));
     }
 
     public function Purchase()
@@ -49,7 +49,7 @@ class HomeController
         $seo=$this->seo;
         $config=$this->system;
         $pay_config=$this->pay_config;
-        return view('Home.Purchase')->with(compact('nav','name','seo','config','pay_config'));
+        return view('home.Purchase')->with(compact('nav','name','seo','config','pay_config'));
     }
     public  function Support($cid=1){
         $nav=$this->nav;
@@ -61,7 +61,7 @@ class HomeController
         $category = Classify::find($cid,['name']);
         $cate_name=$category->name;
         //return view('Home.Support',['cate_lists' => $lists,'article_lists' => $article_lists,'cate_name' => $category->cate_name]);
-        return view('Home.Support')->with(compact('nav','name','seo','config','cate_lists','article_lists','cate_name'));
+        return view('home.Support')->with(compact('nav','name','seo','config','cate_lists','article_lists','cate_name'));
     }
     public  function Detail($id){
         $nav=$this->nav;
@@ -70,7 +70,7 @@ class HomeController
         $config=$this->system;
         $cate_lists = Classify::get();
         $article = Article::where(['id' => $id])->first();
-        return view('Home.Detail')->with(compact('nav','name','seo','config','cate_lists','article'));
+        return view('home.Detail')->with(compact('nav','name','seo','config','cate_lists','article'));
     }
 
 }
