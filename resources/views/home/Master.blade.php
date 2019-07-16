@@ -48,7 +48,7 @@
                 <div class="footerdownload_icon"><img src="{{asset('images/footerdownload_icon.png')}}" /></div>
                 <div class="footerdownload_div">
                     <div class="footerdownload_name">BETTERZIP 4.2</div>
-                    <div class="footerdownload_miaoshu">最专业的MAC压缩软件</div>
+                    <div class="footerdownload_miaoshu">betterzip满足您mac使用过程中的解压缩需求</div>
                     <a class="footerdownload" href="http://download.betterzip.net/BetterZip-YW.zip">立即下载</a>
                 </div>
             </div>

@@ -183,8 +183,8 @@
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <div class="tijiao_content">
             	<div class="tijiao_tishi">
-                	<p>订单发货后我们会第一时间邮件通知您。</p>
-                    <p>订单商品预计在24小时内发货</p>
+                	<p style="color: red">请认真填写并确认您的收货信息。</p>
+                    <p style="color: red">订单提交后,系统将尽快发送授权信息到您邮箱。</p>
                 </div>
                 <div class="tijiao_btn" id="payNow">
                 	<input type="button" value="提交订单" />
