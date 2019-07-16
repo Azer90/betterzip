@@ -36,8 +36,8 @@ class BuyController extends Controller
             return response()->json($msg);
         }
         $validator=Validator::make($data, [
-                'contact' => 'bail|required|max:5',
-                'mobile' => 'bail|required|max:11',
+                'contact' => 'bail|required|max:20',
+                'mobile' => 'bail|required|max:20',
                 'email' => 'bail|required|email',
                 ]
         );
