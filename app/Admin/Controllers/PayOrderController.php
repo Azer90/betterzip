@@ -107,7 +107,7 @@ class PayOrderController extends Controller
             $filter->disableIdFilter();
 
             // 在这里添加字段过滤器
-            $filter->equal('order_no', '订单号');
+            $filter->equal('trade_no', '交易订单号');
             $filter->like('goods_name', '商品名');
             $filter->equal('email', '邮箱')->email();
             $filter->between('created_at', '日期')->datetime();
@@ -125,15 +125,16 @@ class PayOrderController extends Controller
 
         });
         $grid->id('ID');
-        $grid->column('order_no', trans('admin.order_no'));
         $grid->payway(trans('admin.payway'));
         $grid->goods_name(trans('admin.goods'));
         $grid->amount(trans('admin.amount'));
         $grid->address('地区');
         $grid->trade_no('交易订单号');
-        $grid->created_at(trans('admin.created_at'));
+        $grid->contact('联系人');
+        $grid->email('邮箱');
+        $grid->mobile('手机号');
         $grid->updated_at(trans('admin.updated_at'));
-        //$grid->openid('用户标识');
+
         $grid->status(trans('admin.status'))->display(function ($released) {
             switch ($released){
                 case 0:
