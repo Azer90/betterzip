@@ -25,10 +25,34 @@
             <div class="buy_price"><span class="price_span">¥ {{$pay_config['price']}}</span><span class="price_old">原价： 169</span> 五分钟内发送邮件到您填写的邮箱</div>
             <table cellpadding="0" cellspacing="0" border="0" class="buy_table">
             	<tr>
-                	<td class="buy_td1">版本：</td>
+                	<td class="buy_td1">软件版本：</td>
                     <td>
                         <dl class="buy_dl">
-                            <dd class="selecta buy_active">Mac标准版</dd>
+                            <dd class="selecta buy_active">标准版</dd>
+                        </dl>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="buy_td1">适用平台：</td>
+                    <td>
+                        <dl class="buy_dl">
+                            <dd class="selecta buy_active">Mac</dd>
+                        </dl>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="buy_td1">授权方式：</td>
+                    <td>
+                        <dl class="buy_dl">
+                            <dd class="selecta buy_active">激活码</dd>
+                        </dl>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="buy_td1">授权年限：</td>
+                    <td>
+                        <dl class="buy_dl">
+                            <dd class="selecta buy_active">永久</dd>
                         </dl>
                     </td>
                 </tr>
