@@ -19,11 +19,11 @@
             <table cellpadding="0" cellspacing="0" border="0">
                 <tr>
                     <td class="canshu_td">软件语言：</td>
-                    <td>英文</td>
+                    <td>中文</td>
                 </tr>
                 <tr>
                     <td class="canshu_td">软件版本：</td>
-                    <td>V 4.2.1</td>
+                    <td>V 4.2</td>
                 </tr>
                 <tr>
                     <td class="canshu_td">软件大小：</td>
@@ -31,7 +31,7 @@
                 </tr>
                 <tr>
                     <td class="canshu_td">更新日期：</td>
-                    <td>2018-11-08</td>
+                    <td>2019年7月1日</td>
                 </tr>
                 <tr>
                     <td class="canshu_td">系统要求：</td>

@@ -12,8 +12,8 @@
     <div class="banner_wrap">
         <div class="introduction_content">
             <div class="bannerproduct_name">BETTERZIP 4.2</div>
-            <div class="bannerproduct_miaoshu">betterzip满足您mac使用过程中的解压缩需求</div>
-	    <div class="bannerproduct_miaoshu" style="color:red;font-size:32px;padding-left:70px;font-weight:bold;">特价促销中</div>
+            <div class="bannerproduct_miaoshu">功能强大的Mac解压缩软件<br/>支持RAR,ZIP等格式,可创建小型应用程序</div>
+	    {{--<div class="bannerproduct_miaoshu" style="color:red;font-size:32px;padding-left:70px;font-weight:bold;">特价促销中</div>--}}
             <a class="bannerproduct_download" href="http://download.betterzip.net/BetterZip-YW.zip">免费下载</a>
         </div>
     </div>
