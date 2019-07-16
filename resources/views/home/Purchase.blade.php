@@ -75,19 +75,19 @@
                     <tr>
                         <td class="td_title"><span class="red">*</span>手机号码：</td>
                         <td><input type="text" name="mobile" value=""/></td>
-                        <td class="td_title"><span class="red">*</span>电子邮箱：</td>
-                        <td><input type="text" name="email" value=""/></td>
+
                     </tr>
                     <tr>
-                        <td colspan="4"><input type="checkbox" /><span class="tips">您同时可通过该电子邮件接受来自Betterzip的服务和活动相关信息，包括最新解决方案，版本升级和独家优惠</span></td>
+                        <td class="td_title"><span class="red">*</span>电子邮箱：</td>
+                        <td><input type="text" name="email" value=""/></td>
                     </tr>
                 </table>
 
                 <div class="form_title">2.支付方式</div>
-                <ul class="zhifu_ul">
+              {{--  <ul class="zhifu_ul">
                     <li class="zhifu_li">第三方支付</li>
-                    {{--<li>直接汇款</li>--}}
-                </ul>
+                    <li>直接汇款</li>
+                </ul>--}}
                 <div class="zhifu_content zhifu_con zhifu_show">
                     <div class="zhifu_div"><input type="radio" name="paymethod" checked="true" value="alipay"/><img src="{{asset('images/zhifubao_img.png')}}" /></div>
                     <div class="zhifu_div"><input type="radio" name="paymethod" value="wechat"/><img src="{{asset('images/weixin_img.png')}}" /></div>
