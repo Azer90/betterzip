@@ -1244,9 +1244,9 @@ img.msg-img {
     line-height: 25px;
     text-indent: 28px;
 }
-.contents img {
+/*.contents img {
 	width: 100%;
-}
+}*/
 
 .wechat-pay-dialog-bg {
 	position: absolute;
