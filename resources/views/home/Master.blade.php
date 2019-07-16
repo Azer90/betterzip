@@ -59,7 +59,7 @@
         <div class="footer_wrap">
             <div class="footer_content">
                 {{--<div class="footer_friendship"><a href="#">下载之家</a>|<a href="#">下载之家</a>|<a href="#">下载之家</a>|<a href="#">下载之家</a>|<a href="#">下载之家</a>|<a href="#">下载之家</a>|<a href="#">下载之家</a>|<a href="#">下载之家</a>|<a href="#">下载之家</a>|<a href="#">下载之家</a></div>--}}
-                <div class="footer_banquan">YW-software.com 版权所有      苏ICP备17035980-1</div>
+                <div class="footer_banquan">Copyright 2006-2019.All Rights Reserved 版权所有 苏州野望软件科技有限公司 <a href="http://www.beian.miit.gov.cn">网站备案号：苏ICP备17035980号</a></div>
             </div>
         </div>
         <!--footer结构end-->

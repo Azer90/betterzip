@@ -17,8 +17,10 @@
  * Admin::js('/packages/prettydocs/js/main.js');
  *
  */
-
+use App\Admin\Extensions\Form\UEditor;
 Encore\Admin\Form::forget(['map', 'editor']);
 
 // 覆盖`admin`命名空间下的视图
 app('view')->prependNamespace('admin', resource_path('views/admin'));
+
+Encore\Admin\Form::extend('UEditor', UEditor::class);
