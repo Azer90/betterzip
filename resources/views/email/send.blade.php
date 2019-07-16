@@ -7,7 +7,7 @@
 </head>
 <body>
 <span>
-    联系人：{{$contact}}<br/>
+联系人：{{$contact}}<br/>
 手机号：{{$mobile}}<br/>
 邮箱：{{$email}}<br/>
 

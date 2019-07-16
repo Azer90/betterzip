@@ -135,7 +135,7 @@ $(function() {
                     // console.log(data['trade_status']);
                     if (data['trade_status'] == 'TRADE_SUCCESS') {
                         clearInterval(chaxun);
-                        alert('支付成功');
+                        alert('支付成功,系统将尽快发送授权信息到您邮箱,非工作时间请耐心等待。谢谢');
                     }
                 }else if(paymethod == 'wechat'){
                     //console.log(data['trade_state']);
@@ -143,7 +143,7 @@ $(function() {
                         $(".wechat-pay-dialog-bg").css("display", "none");
                         $(".wechat-pay-dialog").css("display", "none");
                         clearInterval(chaxun);
-                        alert('支付成功');
+                        alert('支付成功,系统将尽快发送授权信息到您邮箱,非工作时间请耐心等待。谢谢');
                     }
                 }
 

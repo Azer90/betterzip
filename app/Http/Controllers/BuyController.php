@@ -256,7 +256,7 @@ class BuyController extends Controller
     }*/
 
     protected function sendEmail($to,$data_d){
-        $subject = '自动发送-晨光pdf转换器注册码';
+        $subject = 'betterzip用户订单信息';
         $data=['mobile' => $data_d['mobile'],'contact' => $data_d['contact'],'email' => $data_d['email']];
         Mail::send('email.send', $data, function ($message) use($to, $subject) {
                 $message->to($to)->subject($subject);
