@@ -22,7 +22,7 @@
         <div class="buy_xinxi">
         	<div class="buy_name">{{$pay_config['goods_name'] }}</div>
             <div class="buy_jieshao">betterzip满足您mac使用过程中的解压缩需求</div>
-            <div class="buy_price"><span class="price_span">¥ {{$pay_config['price']}}</span><span class="price_old">原价： 169</span> ☆暑期特惠价</div>
+            <div class="buy_price"><span class="price_span">¥ {{$pay_config['price']}}</span><span class="price_old">原价： ¥359元</span> ☆ 暑期特惠价</div>
             <table cellpadding="0" cellspacing="0" border="0" class="buy_table">
             	<tr>
                 	<td class="buy_td1">软件版本：</td>
