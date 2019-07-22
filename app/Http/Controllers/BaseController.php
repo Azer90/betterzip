@@ -17,8 +17,8 @@ trait BaseController
 
     protected $ali_config = [
         'app_id' => '',
-        'notify_url' => 'http://betterzip.9889188.com/alipay_notify',
-        'return_url' => 'http://betterzip.9889188.com/goumai.html',
+        'notify_url' => 'https://www.betterzip.net/alipay_notify',
+        'return_url' => 'https://www.betterzip.net/goumai.html',
         'ali_public_key' => '',
         // 加密方式： **RSA2**
         'private_key' => '',
@@ -37,7 +37,7 @@ trait BaseController
         'miniapp_id' => '', // 小程序 APPID
         'mch_id' => '',
         'key' => '',
-        'notify_url' => 'http://betterzip.9889188.com/wechat_notify',
+        'notify_url' => 'https://www.betterzip.net/wechat_notify',
         'cert_client' => '../config/wechatcert/apiclient_cert.pem', // optional，退款等情况时用到
         'cert_key' => '../config/wechatcert/apiclient_key.pem',// optional，退款等情况时用到
         'log' => [ // optional
