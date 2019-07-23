@@ -92,11 +92,11 @@
                     {{--</div>--}}
                 {{--</div>--}}
                 <div class="mobel mail">
-                    <a href="mailto:mark@yw-software.com"><img src="{{asset('images/mail.png')}}"></a>
+                    <a href="mailto:admin@betterzip.net"><img src="{{asset('images/mail.png')}}"></a>
                     <div class="tool-line"></div>
                     <div class="hidemobelBox hidemailBox" style="display: none; top: 0px;">
                         <div class="hidemobel">
-                            <p><a rel="nofollow" href="mailto:mark@yw-software.com">mark@yw-software.com</a></p>
+                            <p><a rel="nofollow" href="mailto:admin@betterzip.net">admin@betterzip.net</a></p>
                             <div class="triangle"> </div>
                         </div>
 
