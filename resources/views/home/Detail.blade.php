@@ -11,8 +11,8 @@
     <!--banner结构-->
     <div class="feature_banner_wrap">
         <div class="introduction_content">
-            <div class="bannerproduct_name feature_bannerproduct_name">BETTERZIP 4.0</div>
-            <div class="bannerproduct_miaoshu">最专业的MAC压缩软件</div>
+            <div class="bannerproduct_name feature_bannerproduct_name">BETTERZIP 4.2</div>
+            <div class="bannerproduct_miaoshu">功能强大的Mac解压缩软件<br/>支持RAR,ZIP等格式,可创建小型应用程序</div>
             <a class="bannerproduct_download" href="http://download.betterzip.net/BetterZip-YW.zip">立即下载</a>
         </div>
     </div>
